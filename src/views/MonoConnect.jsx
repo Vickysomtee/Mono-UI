@@ -1,4 +1,6 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from '../api/axios';
 import MonoConnect from '@mono.co/connect.js';
 
 import SideBar from '../components/SideBar'
@@ -7,11 +9,20 @@ import arr from '../assets/icons/arrow-right.svg'
 import lock from '../assets/icons/Group 202padlock.svg'
 
 const MonoLink = () => {
+
+  let navigate = useNavigate()
+
+  const sendCode = async (code) => {
+    await axios.patch("/exchange-token", { code });
+  }
+
   const monoConnect = React.useMemo(() => {
     const monoInstance = new MonoConnect({
-      onClose: () => console.log('Widget closed'),
-      onLoad: () => console.log('Widget loaded successfully'),
-      onSuccess: ({ code }) => console.log(`Linked successfully: ${code}`),
+      onSuccess: ({ code }) => {
+        navigate("/dashboard");
+
+        sendCode(code);
+      },
       key: "test_pk_0fwxulSitZ11rGOB6tZU"
     })
 

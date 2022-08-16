@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import Login from './views/Login';
 import Register from './views/Register';
+import Dashboard from './views/Dashboard';
 import MonoLink from './views/MonoConnect';
 
 
@@ -19,6 +20,7 @@ root.render(
         <Route path="login" element={<Login />} />
         <Route path="/" element={<Register />} />
         <Route path="link-account" element={<MonoLink />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

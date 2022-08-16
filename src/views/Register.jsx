@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
+import {setToken} from '../utils/auth'
 
 import MonoLogo from "../assets/Grouplogo.png"
 
@@ -25,7 +26,6 @@ const Register = () => {
 
   const register = async (e) => {
     e.preventDefault()
-    console.log(payload)
     
     try {
 
@@ -34,7 +34,7 @@ const Register = () => {
         return;
       }
       const  {data}  = await axios.post('register', payload);
-      console.log(data)
+      setToken(data.data.token)
       navigate('/link-account')
 
     } catch (error) {
