@@ -13,7 +13,11 @@ const MonoLink = () => {
   let navigate = useNavigate()
 
   const sendCode = async (code) => {
-    await axios.patch("/exchange-token", { code });
+    await axios.patch("/exchange-token", { code }, {
+      headers: {
+        authorization: localStorage.getItem('token')
+      }
+    });
   }
 
   const monoConnect = React.useMemo(() => {

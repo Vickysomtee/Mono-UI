@@ -6,6 +6,7 @@ import options from '../assets/icons/options.svg';
 import profile from '../assets/Profile.png';
 import calendar from '../assets/icons/calendar.svg';
 import transaction from '../assets/icons/transaction.svg';
+import chart from '../assets/icons/Stats.svg'
 
 const Dashboard = () => {
   return (
@@ -14,8 +15,9 @@ const Dashboard = () => {
       <div className='flex justify-between'>
 
 
-        <div className='ml-[250px] w-[60%] px-[40px] py-5 h-screen border-r shadow-sm '>
+        <div className='ml-[250px] w-[60%] px-[40px] py-[40px] h-screen border-r shadow-sm '>
           <div className='flex justify-between font-medium text-[17px] pb-5 mb-10 border-b'>
+
             <div className='flex'>
               <img className='w-[50px] h-[50px]' src={profile} alt="" />
               <h1 className='relative top-3 left-2'>Good morning, Ola</h1>
@@ -25,11 +27,17 @@ const Dashboard = () => {
               <img className='w-[20px] h-[20px] relative top-4' src={calendar} alt="" />
             </div>
           </div>
+
           <div className=''>
+            <img className='my-0 mx-auto w-[1000px]' src={chart} alt="" />
+          </div>
+
+          <div className='mt-[100px]'>
             <div className='flex justify-between font-light text-[25px] pb-5 mb-10 border-b'>
               <h1 className=''>Latest Transactions</h1>
               <img src={options} alt="" />
             </div>
+
             <div className='flex justify-between'>
               <div className='flex w-[300px]'>
                 <img className='w-[100px] h-[80px]' src={transaction} alt="" />
@@ -46,6 +54,7 @@ const Dashboard = () => {
               </div>
               <div className='font-bold text-2xl '>-10,000</div>
             </div>
+
           </div>
         </div>
 
@@ -59,7 +68,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className='flex justify-between text-[25px] font-light pb-5 my-[50px] border-b'>
+          <div className='flex justify-between text-[25px] font-light pb-5 mt-[60px] border-b'>
             <h1 className=''>Where you money go?</h1>
             <img src={options} alt="" />
           </div>
