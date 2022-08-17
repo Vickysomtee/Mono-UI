@@ -29,6 +29,7 @@ const MonoLink = () => {
     monoInstance.setup()
 
     return monoInstance;
+    // eslint-disable-next-line
   }, [])
 
   return (

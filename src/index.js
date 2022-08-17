@@ -9,7 +9,7 @@ import Dashboard from './views/Dashboard';
 import MonoLink from './views/MonoConnect';
 
 
-import { BrowserRouter, Route, Routes, Router } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
